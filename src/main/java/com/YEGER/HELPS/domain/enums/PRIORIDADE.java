@@ -1,13 +1,12 @@
 package com.YEGER.HELPS.domain.enums;
 
-public enum STATUS {
-	ABERTO(0,"ABERTO"), ANDAMDENTO(1,"ANDAMDENTO"), ENCERRADO(2,"ENCERRADO");
-
+public enum PRIORIDADE {
+BAIXA(0,"BAIXA"), MEDIA(1,"MEDIA"), ALTA(2,"STATUS.java");
 	
 	private Integer codigo;
 	private String descriçao;
 	
-	private STATUS(Integer codigo, String descriçao) {
+	private PRIORIDADE(Integer codigo, String descriçao) {
 		this.codigo = codigo;
 		this.descriçao = descriçao;
 	}
@@ -20,16 +19,16 @@ public enum STATUS {
 		return descriçao;
 	} 
 	
-	public static STATUS toEnum(Integer cod) {
+	public static PRIORIDADE toEnum(Integer cod) {
 		if(cod == null) {
 			return null;	
 		}
-		for(STATUS x : STATUS.values()) {
+		for(PRIORIDADE x : PRIORIDADE.values()) {
 			if(cod.equals(x.getCodigo())) {
 				return x;
 				}
 			}
-		throw new IllegalArgumentException("STATUS INVALIDO");
+		throw new IllegalArgumentException("PRIORIDADE INVALIDA");
 	}
 	
 }
